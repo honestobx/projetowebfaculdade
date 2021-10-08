@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Contato - Barbearia</title>
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="style_barbearia.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<div class="caixa">
+				<h1><img src="logo.png.crdownload" alt="Logo da Barbearia"></h1>
+				<nav>
+					<ul>
+						<li><a href="barbeariaweb.html">Home</a></li>
+						<li><a href="barbeariaweb.html#quemSomos">Quem Somos</a></li>
+						<li><a href="barbearia_produtos.html">Serviços</a></li>
+						<li><a href="contato_barbearia.html">Contato</a></li>
+						<li><a href="login.html">Login</a></li>
+						
+					</ul>
+				</nav>
+			</div>
+		</header>
+		
+		<main>
+			<form method="GET">
+				<label for="nomesobrenome">Nome e Sobrenome</label>
+				<input type="text" id="nomesobrenome" class="input-padrao" placeholder="Nome Sobrenome">		
+
+				<label for="email">Email</label>
+				<input type="email" id="email" class="input-padrao" placeholder="Ex: seuemail@gmail.com.br" required>
+
+				<label for="telefone">Telefone</label>
+				<input type="tel" id="telefone" class="input-padrao" placeholder="Ex: (99) 99999-9999" required>	
+
+				<label for="mensagem">Mensagem</label>
+				<textarea cols="70" rows="10" id="mensagem" class="input-padrao" required></textarea>
+
+				<fieldset>
+					<legend>Como prefere nosso contato?</legend>
+					<label for="radio-email"><input type="radio" name="contato" value="email" id="radio-email">Email</label>
+					
+					<label for="radio-telefone"><input type="radio" name="contato" value="telefone" id="radio-telefone">Telefone</label>
+					
+					<label for="radio-whatsapp"><input type="radio" name="contato" value="whatsapp" id="radio-whatsapp" checked>Whastapp</label>	
+				</fieldset>
+
+				<fieldset>
+					<legend>Que horário prefere ser atendido?</legend>
+					<select>
+						<option>Manhã</option>
+						<option>Tarde</option>
+						<option>Noite</option>
+					</select>
+				</fieldset>
+
+				<label class="checkbox"><input type="checkbox" checked>Gostaria de receber nossas novidades por email?</label>
+
+				<input type="submit" value="Enviar Formulário" class="enviar">
+			</form>
+			<table>
+				<thead>
+					<th>Dia</th>
+					<th>Horário</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Segunda</td>
+						<td>8h ~ 20h</td>
+					</tr>
+					<tr>
+						<td>Quarta</td>
+						<td>8h ~ 20h</td>
+					</tr>
+					<tr>
+						<td>Sexta</td>
+						<td>8h ~ 20h</td>
+					</tr>
+				</tbody>
+			</table>
+		</main>
+		<footer>
+			<!-- <img src="logo-branco.png"> -->
+			<a href="https://www.instagram.com/"><img class="redes_sociais" src="instagram.png" alt="Instagram"></a>
+			<a href="https://www.facebook.com/"><img class="redes_sociais" src="facebook.png" alt="Facebook"></a>
+			
+			<p class="copyright">&copy; Copyright Barbearia - 2021</p>
+		</footer>
+		
+	</body>
+</html>

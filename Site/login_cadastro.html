@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Contato - Barbearia</title>
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="style_barbearia.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+		
+	</head>
+	<body>
+		<header>
+			<div class="caixa">
+				<h1><img src="logo.png.crdownload" alt="Logo da Barbearia"></h1>
+				<nav>
+					<ul>
+						<li><a href="barbeariaweb.html">Home</a></li>
+						<li><a href="barbeariaweb.html#quemSomos">Quem Somos</a></li>
+						<li><a href="barbearia_produtos.html">Serviços</a></li>
+						<li><a href="contato_barbearia.html">Contato</a></li>
+						<li><a href="login.html">Login</a></li>
+						
+					</ul>
+				</nav>
+			</div>
+		</header>
+		
+		<main>
+			<form id="register-form" method="POST">
+				<label for="nomesobrenome">Nome e Sobrenome</label>
+				<input type="text" id="nomeSobrenome" class="input-padrao" placeholder="Nome e Sobrenome" data-min-length="6">		
+
+				<label for="email">Email</label>
+				<input type="email" id="cadastrar_email" class="input-padrao"  placeholder="email" data-min-length="6">
+
+				<label for="senha">Senha</label>
+				<input type="password" id="cadastrar_senha" class="input-padrao" placeholder="senha" data-min-length="6" required>
+
+				<label for="telefone">Telefone</label>
+				<input type="tel" id="telefone" class="input-padrao" placeholder="Ex: (99) 99999-9999" required>	
+
+				
+
+
+				
+
+				<label class="checkbox"><input type="checkbox" checked>Eu li e aceito os <a href="#">termos de uso</a> </label>
+					<br><br><br>
+				<input type="submit" id="btn-submit" value="Cadastrar" class="enviar">
+			</form>
+			
+		</main>
+		<footer>
+			<!-- <img src="logo-branco.png"> -->
+			<a href="https://www.instagram.com/"><img class="redes_sociais" src="instagram.png" alt="Instagram"></a>
+			<a href="https://www.facebook.com/"><img class="redes_sociais" src="facebook.png" alt="Facebook"></a>
+			
+			<p class="copyright">&copy; Copyright Barbearia - 2021</p>
+		</footer>
+	
+		
+	<script>
+		
+		class Validator{
+			constructor(){
+				this.validations = [
+					'data-min-length',
+				]
+			}
+
+			//iniciar a validação de todos os campos
+			validate(form) {
+
+				//pegar os inputs
+				let inputs = form.getElementsByTagName('input');
+				
+			
+				let inputsArray = [...inputs];
+				
+				//loop nos inputs e validação mediante ao que for encontrado
+				inputsArray.forEach(function(input){
+					for(let i = 0; this.validations.length > i; i++) {
+						//verifica se a validação atual existe no input
+						if(input.getAttribute(this.validations[i]) != null) {
+							
+							//limpando a string para virar um método
+							let method = this.validations[i].replace('data-', '').replace('-', '');
+
+							//valor do input
+							let value = input.getAttribute(this.validations[i]);
+
+							//invocar método
+							this[method](input, value);
+						}
+					}
+						
+					
+				}, this);
+		}
+
+		//verifica se um input tem um número mínimo de caracteres
+		minlength(input, minValue){
+
+			let inputLength = input.value.length;
+
+			let errorMessage = `Campo ` + input.placeholder + ` deve ter pelo menos ${minValue} caracteres para finalizar o cadastro`;
+
+			let mensagemCadastrada = input.placeholder + ` Cadastrado com Sucesso`;
+
+			if(inputLength < minValue) {
+				alert(errorMessage);
+
+			} else{
+			alert(mensagemCadastrada);
+			}
+		}
+
+		
+	}
+
+		let form = document.getElementById("register-form");
+		let submit = document.getElementById("btn-submit");
+
+		let validator = new Validator();
+
+		// Evento para disparar as validações
+
+		submit.addEventListener('click', function(e){
+			e.preventDefault();
+			
+			validator.validate(form);
+		});
+
+		
+		
+		
+	</script>	
+	</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Contato - Barbearia</title>
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="style_barbearia.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+		
+	</head>
+	<body>
+		<header>
+			<div class="caixa">
+				<h1><img src="logo.png.crdownload" alt="Logo da Barbearia"></h1>
+				<nav>
+					<ul>
+						<li><a href="barbeariaweb.html">Home</a></li>
+						<li><a href="barbeariaweb.html#quemSomos">Quem Somos</a></li>
+						<li><a href="barbearia_produtos.html">Serviços</a></li>
+						<li><a href="contato_barbearia.html">Contato</a></li>
+						<li><a href="login.html">Login</a></li>
+						
+					</ul>
+				</nav>
+			</div>
+		</header>
+		
+		<main>
+			<form class="login">
+                <h3>Login</h3>
+				<input type="text" id="email" placeholder="Email">
+                <input type="password" id="senha" placeholder="senha">
+                <input type="submit"  value="Entrar" onclick="login()">
+                <a id="cadastro" href="login_cadastro.html">Cadastre-se</a>
+                
+
+
+				
+			</form>
+
+		</main>
+		<footer>
+			<!-- <img src="logo-branco.png"> -->
+			<a href="https://www.instagram.com/"><img class="redes_sociais" src="instagram.png" alt="Instagram"></a>
+			<a href="https://www.facebook.com/"><img class="redes_sociais" src="facebook.png" alt="Facebook"></a>
+			
+			<p class="copyright">&copy; Copyright Barbearia - 2021</p>
+		</footer>
+
+		<script>
+			function login(){
+				var email = document.getElementById("email");
+				var senha = document.getElementById("senha");
+				
+				if(email.value == "admin@admin.com" && senha.value == "admin"){
+					
+					alert("Login feito com sucesso")
+					
+				}else{
+				alert("Usuário não Cadastrado");
+				
+				}
+			}
+			
+		</script>
+        
+	</body>
+</html>
